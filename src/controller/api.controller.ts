@@ -24,6 +24,8 @@ export class APIController {
   }
   @Get('/mock_get_user')
   async mockGetUser(): Promise<resultType> {
+    console.log(123);
+
     const user = await this.userService.mockGetUser();
     return { success: true, message: 'OK', data: user };
   }
