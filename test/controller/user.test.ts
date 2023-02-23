@@ -8,7 +8,7 @@ describe('test/controller/home.test.ts', () => {
     const app = await createApp<Framework>();
 
     // make request
-    const result = await createHttpRequest(app).get('/user/get_user').query({ userId: 1 });
+    const result = await createHttpRequest(app).get('/user/get_user').query({ userHh: 1 });
 
     // use expect by jest
     expect(result.status).toBe(200);
@@ -17,8 +17,5 @@ describe('test/controller/home.test.ts', () => {
     // close app
     await close(app);
   });
-
-  // mock_get_user测试
-
 
 });

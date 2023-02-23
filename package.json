@@ -4,6 +4,7 @@
   "description": "",
   "private": true,
   "dependencies": {
+    "@koa/cors": "^4.0.0",
     "@midwayjs/bootstrap": "^3.0.0",
     "@midwayjs/core": "^3.0.0",
     "@midwayjs/decorator": "^3.0.0",
@@ -33,7 +34,7 @@
     "node": ">=12.0.0"
   },
   "scripts": {
-    "start": "NODE_ENV=production node ./bootstrap.js",
+    "start": "node ./bootstrap.js",
     "dev": "cross-env NODE_ENV=local midway-bin dev --ts",
     "test": "midway-bin test --ts",
     "cov": "midway-bin cov --ts",
