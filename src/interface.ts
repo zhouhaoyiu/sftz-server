@@ -12,7 +12,7 @@
  * userWx                  用户微信
  */
 export interface IUserOptions {
-  userId: number;
+  userId?: number;
   userHh: string;
   jfyf: string;
   userName: string;

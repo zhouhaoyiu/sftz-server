@@ -20,7 +20,10 @@ export default {
         define: {
           timestamps: false,
         },
+        sync: true,
+        models: [User],
       },
     },
+    validateOnly: true,
   },
 } as MidwayConfig;

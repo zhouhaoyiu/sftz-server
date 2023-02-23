@@ -13,6 +13,8 @@ export class APIController {
 
   @Get('/get_user')
   async getUser(@Query('userHh') userHh: string): Promise<resultType> {
+    console.log('userHh', userHh);
+
     const user = await this.userService.getUser(userHh);
     return { success: true, message: 'OK', data: user };
   }
@@ -24,8 +26,6 @@ export class APIController {
   }
   @Get('/mock_get_user')
   async mockGetUser(): Promise<resultType> {
-    console.log(123);
-
     const user = await this.userService.mockGetUser();
     return { success: true, message: 'OK', data: user };
   }

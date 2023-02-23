@@ -38,10 +38,9 @@ export class UserService {
     return await User.findAll();
   }
 
-  async mockCreateUser(): Promise<void> {
+  async mockCreateUser(): Promise<User[]> {
     const userList: IUserOptions[] = [
       {
-        userId: 1,
         userHh: '123456',
         jfyf: '2023-02',
         userName: '张三',
@@ -54,7 +53,6 @@ export class UserService {
         userWx: 'zhangsan',
       },
       {
-        userId: 2,
         userHh: '789012',
         jfyf: '2023-02',
         userName: '李四',
@@ -67,20 +65,6 @@ export class UserService {
         userWx: 'lisi',
       },
     ];
-    for (const user of userList) {
-      await User.create({
-        userId: user.userId,
-        userHh: user.userHh,
-        jfyf: user.jfyf,
-        userName: user.userName,
-        userAddress: user.userAddress,
-        currentNumber: user.currentNumber,
-        lastNumber: user.lastNumber,
-        latestPaymentDate: user.latestPaymentDate,
-        userTotalUse: user.userTotalUse,
-        userPhone: user.userPhone,
-        userWx: user.userWx,
-      });
-    }
+    return await User.bulkCreate(userList as any);
   }
 }
