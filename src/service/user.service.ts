@@ -10,9 +10,10 @@ import { User } from '../entity/user';
  * currentNumber           本次指数
  * lastNumber              上次指数
  * latestPaymentDate       最迟缴费日期
- * userTotalUse            总用量
+ * userPopulation          用户人数
  * userPhone               用户电话
  * userWx                  用户微信
+ * waterClassification     用水分类
  */
 @Provide()
 export class UserService {
@@ -29,9 +30,10 @@ export class UserService {
       currentNumber: 0,
       lastNumber: 123,
       latestPaymentDate: '2023-03-15',
-      userTotalUse: 0,
+      userPopulation: 3,
       userPhone: '12345678901',
       userWx: 'zhangsan',
+      waterClassification: '居民一',
     };
   }
   async getAllUser(): Promise<IUserOptions[]> {
@@ -48,9 +50,10 @@ export class UserService {
         currentNumber: 0,
         lastNumber: 123,
         latestPaymentDate: '2023-03-15',
-        userTotalUse: 0,
+        userPopulation: 3,
         userPhone: '12345678901',
         userWx: 'zhangsan',
+        waterClassification: '居民一,生活一',
       },
       {
         userHh: '789012',
@@ -60,9 +63,10 @@ export class UserService {
         currentNumber: 0,
         lastNumber: 456,
         latestPaymentDate: '2023-03-15',
-        userTotalUse: 0,
+        userPopulation: 3,
         userPhone: '188117111111',
         userWx: 'lisi',
+        waterClassification: '特种一,生活一',
       },
     ];
     return await User.bulkCreate(userList as any);

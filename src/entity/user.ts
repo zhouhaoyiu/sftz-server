@@ -9,9 +9,10 @@ import { Column, Model, Table } from 'sequelize-typescript';
  * currentNumber           本次指数
  * lastNumber              上次指数
  * latestPaymentDate       最迟缴费日期
- * userTotalUse            总用量
+ * userPopulation          用户人数
  * userPhone               用户电话
  * userWx                  用户微信
+ * waterClassification     用水分类
  */
 
 @Table
@@ -41,11 +42,14 @@ export class User extends Model {
   latestPaymentDate: string;
 
   @Column
-  userTotalUse: number;
+  userPopulation: number;
 
   @Column
   userPhone: string;
 
   @Column
   userWx: string;
+
+  @Column
+  waterClassification: string;
 }

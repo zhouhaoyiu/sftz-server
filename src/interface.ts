@@ -7,9 +7,10 @@
  * currentNumber           本次指数
  * lastNumber              上次指数
  * latestPaymentDate       最迟缴费日期
- * userTotalUse            总用量
+ * userPopulation          用户人数
  * userPhone               用户电话
  * userWx                  用户微信
+ * waterClassification     用水分类
  */
 export interface IUserOptions {
   userId?: number;
@@ -20,7 +21,8 @@ export interface IUserOptions {
   currentNumber: number;
   lastNumber: number;
   latestPaymentDate: string;
-  userTotalUse: number;
+  userPopulation: number;
   userPhone: string;
   userWx: string;
+  waterClassification: string;
 }
