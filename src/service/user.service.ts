@@ -40,6 +40,13 @@ export class UserService {
     return await User.findAll();
   }
 
+  async updateUserByUserHh(
+    userHh: string,
+    rest: any
+  ): Promise<[affectedCount: number]> {
+    return await User.update(rest, { where: { userHh } });
+  }
+
   async mockCreateUser(): Promise<User[]> {
     const userList: IUserOptions[] = [
       {
