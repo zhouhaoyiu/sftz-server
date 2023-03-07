@@ -47,6 +47,30 @@ export class UserService {
     return await User.update(rest, { where: { userHh } });
   }
 
+  async createUser(userHh: string, rest: any): Promise<User> {
+    return await User.create({ userHh, ...rest });
+  }
+
+  async deleteUserByUserHh(userHh: string): Promise<number> {
+    return await User.destroy({ where: { userHh } });
+  }
+
+  async updateWaterClassificationByUserHh(
+    userHh: string,
+    waterClassification: string
+  ): Promise<[affectedCount: number]> {
+    return await User.update(
+      {
+        waterClassification,
+      },
+      { where: { userHh } }
+    );
+  }
+
+  async getUserCount(): Promise<number> {
+    return await User.count();
+  }
+
   async mockCreateUser(): Promise<User[]> {
     const userList: IUserOptions[] = [
       {
@@ -60,7 +84,10 @@ export class UserService {
         userPopulation: 3,
         userPhone: '12345678901',
         userWx: 'zhangsan',
-        waterClassification: '居民一,生活一',
+        waterClassification: JSON.stringify([
+          { waterType: '生活一', waterNumber: '0' },
+          { waterType: '生活二', waterNumber: 0 },
+        ]),
       },
       {
         userHh: '789012',
@@ -73,7 +100,10 @@ export class UserService {
         userPopulation: 3,
         userPhone: '188117111111',
         userWx: 'lisi',
-        waterClassification: '特种一,生活一',
+        waterClassification: JSON.stringify([
+          { waterType: '生活一', waterNumber: '0' },
+          { waterType: '生活二', waterNumber: 0 },
+        ]),
       },
     ];
     return await User.bulkCreate(userList as any);
