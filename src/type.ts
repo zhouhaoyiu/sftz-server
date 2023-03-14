@@ -1,5 +1,6 @@
 export type resultType = {
-  success: boolean;
+  success?: boolean;
   message: string;
   data?: any;
+  code?: number;
 };
