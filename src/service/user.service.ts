@@ -51,6 +51,13 @@ export class UserService {
     return await User.create({ userHh, ...rest });
   }
 
+  async saveUserNewInfoToDB(
+    userHh: string,
+    rest: any
+  ): Promise<[affectedCount: number]> {
+    return await User.update(rest, { where: { userHh } });
+  }
+
   async deleteUserByUserHh(userHh: string): Promise<number> {
     return await User.destroy({ where: { userHh } });
   }

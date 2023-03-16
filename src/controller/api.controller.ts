@@ -33,6 +33,14 @@ export class APIController {
     return { success: true, message: 'OK', data: user };
   }
 
+  @Post('/save_user_new_info_to_DB')
+  async saveUserNewInfoToDB(): Promise<resultType> {
+    const { editUserHh, ...rest } = this.ctx.request.body as any;
+    console.log('userHh', editUserHh);
+    const user = await this.userService.saveUserNewInfoToDB(editUserHh, rest);
+    return { success: true, message: 'OK', data: user };
+  }
+
   @Post('/create_user')
   async createUser(): Promise<resultType> {
     const { userHh, ...rest } = this.ctx.request.body as any;
