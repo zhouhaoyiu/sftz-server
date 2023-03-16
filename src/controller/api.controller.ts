@@ -27,14 +27,16 @@ export class APIController {
 
   @Post('/update_user_by_userHh')
   async updateUserByUserHh(): Promise<resultType> {
-    const { userHh, ...rest } = this.ctx.request.body as any;
-    const user = await this.userService.updateUserByUserHh(userHh, rest);
+    const { editUserHh, ...rest } = this.ctx.request.body as any;
+    console.log('userHh', editUserHh);
+    const user = await this.userService.updateUserByUserHh(editUserHh, rest);
     return { success: true, message: 'OK', data: user };
   }
 
   @Post('/create_user')
   async createUser(): Promise<resultType> {
     const { userHh, ...rest } = this.ctx.request.body as any;
+
     const user = await this.userService.createUser(userHh, rest);
     return { success: true, message: 'OK', data: user };
   }
