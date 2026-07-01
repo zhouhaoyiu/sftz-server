@@ -26,8 +26,20 @@ export class ContainerLifeCycle implements ILifeCycle {
   app: koa.Application;
 
   async onReady() {
+    const allowedOrigins = (process.env.CORS_ORIGINS || 'http://localhost:5173')
+      .split(',')
+      .map(origin => origin.trim())
+      .filter(Boolean);
     // add middleware
-    this.app.useMiddleware([ReportMiddleware, cors()]);
+    this.app.useMiddleware([
+      ReportMiddleware,
+      cors({
+        origin: ctx => {
+          const origin = ctx.get('Origin');
+          return origin && allowedOrigins.includes(origin) ? origin : '';
+        },
+      }),
+    ]);
     // add filter
     this.app.useFilter([NotFoundFilter, DefaultErrorFilter]);
   }

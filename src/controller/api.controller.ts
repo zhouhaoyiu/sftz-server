@@ -11,6 +11,15 @@ export class APIController {
   @Inject()
   userService: UserService;
 
+  private requireAdmin(): resultType | null {
+    const token = process.env.SFTZ_ADMIN_TOKEN;
+    if (!token || this.ctx.get('x-admin-token') !== token) {
+      this.ctx.status = 401;
+      return { success: false, message: 'Unauthorized' };
+    }
+    return null;
+  }
+
   @Get('/get_user')
   async getUser(@Query('userHh') userHh: string): Promise<resultType> {
     console.log('userHh', userHh);
@@ -21,12 +30,16 @@ export class APIController {
 
   @Get('/get_all_user')
   async getAllUser(): Promise<resultType> {
+    const denied = this.requireAdmin();
+    if (denied) return denied;
     const user = await this.userService.getAllUser();
     return { success: true, message: 'OK', data: user };
   }
 
   @Post('/update_user_by_userHh')
   async updateUserByUserHh(): Promise<resultType> {
+    const denied = this.requireAdmin();
+    if (denied) return denied;
     const { editUserHh, ...rest } = this.ctx.request.body as any;
     console.log('userHh', editUserHh);
     const user = await this.userService.updateUserByUserHh(editUserHh, rest);
@@ -35,6 +48,8 @@ export class APIController {
 
   @Post('/save_user_new_info_to_DB')
   async saveUserNewInfoToDB(): Promise<resultType> {
+    const denied = this.requireAdmin();
+    if (denied) return denied;
     const { editUserHh, ...rest } = this.ctx.request.body as any;
     console.log('userHh', editUserHh);
     const user = await this.userService.saveUserNewInfoToDB(editUserHh, rest);
@@ -43,6 +58,8 @@ export class APIController {
 
   @Post('/create_user')
   async createUser(): Promise<resultType> {
+    const denied = this.requireAdmin();
+    if (denied) return denied;
     const { userHh, ...rest } = this.ctx.request.body as any;
 
     const user = await this.userService.createUser(userHh, rest);
@@ -51,6 +68,8 @@ export class APIController {
 
   @Post('/delete_user_by_userHh')
   async deleteUserByUserHh(): Promise<resultType> {
+    const denied = this.requireAdmin();
+    if (denied) return denied;
     const { userHh } = this.ctx.request.body as any;
     const user = await this.userService.deleteUserByUserHh(userHh);
     return { success: true, message: 'OK', data: user };
@@ -58,6 +77,8 @@ export class APIController {
 
   @Post('update_waterClassification_by_userHh')
   async updateWaterClassificationByUserHh(): Promise<resultType> {
+    const denied = this.requireAdmin();
+    if (denied) return denied;
     const { userHh, waterClassification } = this.ctx.request.body as any;
     const user = await this.userService.updateWaterClassificationByUserHh(
       userHh,

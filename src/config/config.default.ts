@@ -3,7 +3,7 @@ import { MidwayConfig } from '@midwayjs/core';
 
 export default {
   // use for cookie sign key, should change to your own and keep security
-  keys: '***REMOVED_COOKIE_KEY***',
+  keys: process.env.APP_KEYS || 'dev_cookie_key_change_me',
   koa: {
     port: 7001,
   },
@@ -11,16 +11,16 @@ export default {
     dataSource: {
       default: {
         dialect: 'mysql',
-        host: 'localhost',
-        port: 3306,
-        database: 'sftz',
-        password: '***REMOVED_DB_PASSWORD***!!',
-        username: 'root',
+        host: process.env.DB_HOST || 'localhost',
+        port: Number(process.env.DB_PORT || 3306),
+        database: process.env.DB_NAME || 'sftz',
+        password: process.env.DB_PASSWORD || '',
+        username: process.env.DB_USERNAME || 'root',
         entities: [User],
         define: {
           timestamps: false,
         },
-        sync: true,
+        sync: process.env.DB_SYNC === 'true',
         models: [User],
       },
     },
