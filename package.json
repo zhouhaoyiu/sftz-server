@@ -12,7 +12,7 @@
     "@midwayjs/koa": "^3.0.0",
     "@midwayjs/logger": "^2.14.0",
     "@midwayjs/sequelize": "3",
-    "@midwayjs/validate": "^3.0.0",
+    "@midwayjs/validate": "^4.2.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.1.2",
     "sequelize": "^6.28.1",
