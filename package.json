@@ -8,7 +8,7 @@
     "@midwayjs/bootstrap": "^3.0.0",
     "@midwayjs/core": "^3.0.0",
     "@midwayjs/decorator": "^3.0.0",
-    "@midwayjs/info": "^3.0.0",
+    "@midwayjs/info": "^4.2.1",
     "@midwayjs/koa": "^3.0.0",
     "@midwayjs/logger": "^2.14.0",
     "@midwayjs/sequelize": "3",
