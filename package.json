@@ -22,7 +22,7 @@
     "@midwayjs/cli": "^2.0.0",
     "@midwayjs/mock": "^3.0.0",
     "@types/jest": "^29.2.0",
-    "@types/koa": "^2.13.4",
+    "@types/koa": "^3.0.3",
     "@types/minimatch": "^5.1.2",
     "@types/node": "20",
     "cross-env": "^10.1.0",
