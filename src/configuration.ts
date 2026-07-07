@@ -1,3 +1,5 @@
+/// <reference path="../typings/koa__cors/index.d.ts" />
+
 import { Configuration, App, ILifeCycle } from '@midwayjs/core';
 import * as koa from '@midwayjs/koa';
 import * as validate from '@midwayjs/validate';
@@ -7,7 +9,7 @@ import * as sequelize from '@midwayjs/sequelize';
 import { DefaultErrorFilter } from './filter/default.filter';
 import { NotFoundFilter } from './filter/notfound.filter';
 import { ReportMiddleware } from './middleware/report.middleware';
-import * as cors from '@koa/cors';
+import cors = require('@koa/cors');
 
 @Configuration({
   imports: [
@@ -34,7 +36,7 @@ export class ContainerLifeCycle implements ILifeCycle {
     this.app.useMiddleware([
       ReportMiddleware,
       cors({
-        origin: ctx => {
+        origin: (ctx: any) => {
           const origin = ctx.get('Origin');
           return origin && allowedOrigins.includes(origin) ? origin : '';
         },
