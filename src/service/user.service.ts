@@ -17,7 +17,7 @@ import { User } from '../entity/user';
  */
 @Provide()
 export class UserService {
-  async getUser(userHh: string): Promise<IUserOptions> {
+  async getUser(userHh: string): Promise<IUserOptions | null> {
     return await User.findOne({ where: { userHh } });
   }
   async mockGetUser(): Promise<IUserOptions> {
