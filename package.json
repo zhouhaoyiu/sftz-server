@@ -5,11 +5,11 @@
   "private": true,
   "dependencies": {
     "@koa/cors": "^5.0.0",
-    "@midwayjs/bootstrap": "^3.0.0",
+    "@midwayjs/bootstrap": "^4.2.1",
     "@midwayjs/core": "^4.2.1",
     "@midwayjs/decorator": "^3.0.0",
     "@midwayjs/info": "^4.2.1",
-    "@midwayjs/koa": "^3.0.0",
+    "@midwayjs/koa": "^4.2.1",
     "@midwayjs/logger": "^2.14.0",
     "@midwayjs/sequelize": "^4.2.1",
     "@midwayjs/validate": "^4.2.1",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@midwayjs/cli": "^2.0.0",
     "@midwayjs/mock": "^3.0.0",
-    "@types/jest": "^29.2.0",
+    "@types/jest": "^30.0.0",
     "@types/koa": "^3.0.3",
     "@types/node": "^26.1.0",
     "cross-env": "^10.1.0",
