@@ -10,7 +10,7 @@
     "@midwayjs/decorator": "^3.0.0",
     "@midwayjs/info": "^4.2.1",
     "@midwayjs/koa": "^4.2.1",
-    "@midwayjs/logger": "^2.14.0",
+    "@midwayjs/logger": "^4.0.1",
     "@midwayjs/sequelize": "^4.2.1",
     "@midwayjs/validate": "^4.2.1",
     "mysql": "^2.18.1",
