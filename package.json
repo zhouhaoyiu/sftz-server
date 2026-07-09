@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@midwayjs/cli": "^2.0.0",
-    "@midwayjs/mock": "^3.0.0",
+    "@midwayjs/mock": "^4.2.1",
     "@types/jest": "^30.0.0",
     "@types/koa": "^3.0.3",
     "@types/node": "^26.1.0",
