@@ -3,7 +3,6 @@
   "compilerOptions": {
     "target": "es2018",
     "module": "commonjs",
-    "moduleResolution": "node",
     "ignoreDeprecations": "6.0",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -17,6 +16,7 @@
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "typeRoots": [ "./typings", "./node_modules/@types"],
+    "rootDir": "src",
     "outDir": "dist"
   },
   "exclude": [

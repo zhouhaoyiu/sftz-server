@@ -44,7 +44,7 @@
     "lint": "mwts check",
     "lint:fix": "mwts fix",
     "ci": "npm run cov",
-    "build": "midway-bin build -c"
+    "build": "rm -rf dist && mkdir -p dist && cp -R src/file dist/file && tsc -p tsconfig.json"
   },
   "midway-bin-clean": [
     ".vscode/.tsbuildinfo",
