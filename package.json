@@ -33,9 +33,6 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "resolutions": {
-    "@types/minimatch": "5.1.2"
-  },
   "scripts": {
     "start": "node ./bootstrap.js",
     "dev": "cross-env NODE_ENV=local midway-bin dev --ts",
@@ -43,7 +40,7 @@
     "cov": "midway-bin cov --ts",
     "lint": "mwts check",
     "lint:fix": "mwts fix",
-    "ci": "npm run cov",
+    "ci": "pnpm run cov",
     "build": "rm -rf dist && mkdir -p dist && cp -R src/file dist/file && tsc -p tsconfig.json"
   },
   "midway-bin-clean": [
@@ -55,5 +52,6 @@
     "url": ""
   },
   "author": "anonymous",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "pnpm@11.9.0"
 }
