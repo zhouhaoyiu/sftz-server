@@ -21,13 +21,15 @@
   "devDependencies": {
     "@midwayjs/cli": "^2.0.0",
     "@midwayjs/mock": "^4.2.1",
+    "@swc/core": "^1.15.43",
+    "@swc/jest": "^0.2.39",
     "@types/jest": "^30.0.0",
     "@types/koa": "^3.0.3",
+    "@types/koa__cors": "^5.0.1",
     "@types/node": "^26.1.0",
     "cross-env": "^10.1.0",
     "jest": "^30.4.2",
-    "mwts": "^2.0.4",
-    "ts-jest": "^29.0.3",
+    "oxlint": "1.73.0",
     "typescript": "~7.0.2"
   },
   "engines": {
@@ -36,10 +38,9 @@
   "scripts": {
     "start": "node ./bootstrap.js",
     "dev": "cross-env NODE_ENV=local midway-bin dev --ts",
-    "test": "midway-bin test --ts",
-    "cov": "midway-bin cov --ts",
-    "lint": "mwts check",
-    "lint:fix": "mwts fix",
+    "test": "jest --runInBand",
+    "cov": "jest --runInBand --coverage",
+    "lint": "oxlint --deny typescript/no-explicit-any .",
     "ci": "pnpm run cov",
     "build": "rm -rf dist && mkdir -p dist && cp -R src/file dist/file && tsc -p tsconfig.json"
   },

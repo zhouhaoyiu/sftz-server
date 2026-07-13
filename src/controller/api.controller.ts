@@ -2,6 +2,11 @@ import { Inject, Controller, Get, Query, Post } from '@midwayjs/core';
 import { Context } from '@midwayjs/koa';
 import { UserService } from '../service/user.service';
 import { resultType } from '../type';
+import { IUserOptions } from '../interface';
+
+type UserMutationBody = Partial<IUserOptions> & {
+  editUserHh?: string;
+};
 
 @Controller('/user')
 export class APIController {
@@ -40,7 +45,8 @@ export class APIController {
   async updateUserByUserHh(): Promise<resultType> {
     const denied = this.requireAdmin();
     if (denied) return denied;
-    const { editUserHh, ...rest } = this.ctx.request.body as any;
+    const { editUserHh = '', ...rest } = this.ctx.request
+      .body as UserMutationBody;
     console.log('userHh', editUserHh);
     const user = await this.userService.updateUserByUserHh(editUserHh, rest);
     return { success: true, message: 'OK', data: user };
@@ -50,7 +56,8 @@ export class APIController {
   async saveUserNewInfoToDB(): Promise<resultType> {
     const denied = this.requireAdmin();
     if (denied) return denied;
-    const { editUserHh, ...rest } = this.ctx.request.body as any;
+    const { editUserHh = '', ...rest } = this.ctx.request
+      .body as UserMutationBody;
     console.log('userHh', editUserHh);
     const user = await this.userService.saveUserNewInfoToDB(editUserHh, rest);
     return { success: true, message: 'OK', data: user };
@@ -60,7 +67,7 @@ export class APIController {
   async createUser(): Promise<resultType> {
     const denied = this.requireAdmin();
     if (denied) return denied;
-    const { userHh, ...rest } = this.ctx.request.body as any;
+    const { userHh = '', ...rest } = this.ctx.request.body as UserMutationBody;
 
     const user = await this.userService.createUser(userHh, rest);
     return { success: true, message: 'OK', data: user };
@@ -70,7 +77,7 @@ export class APIController {
   async deleteUserByUserHh(): Promise<resultType> {
     const denied = this.requireAdmin();
     if (denied) return denied;
-    const { userHh } = this.ctx.request.body as any;
+    const { userHh = '' } = this.ctx.request.body as UserMutationBody;
     const user = await this.userService.deleteUserByUserHh(userHh);
     return { success: true, message: 'OK', data: user };
   }
@@ -79,7 +86,8 @@ export class APIController {
   async updateWaterClassificationByUserHh(): Promise<resultType> {
     const denied = this.requireAdmin();
     if (denied) return denied;
-    const { userHh, waterClassification } = this.ctx.request.body as any;
+    const { userHh = '', waterClassification = '' } = this.ctx.request
+      .body as UserMutationBody;
     const user = await this.userService.updateWaterClassificationByUserHh(
       userHh,
       waterClassification

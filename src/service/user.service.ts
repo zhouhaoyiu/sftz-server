@@ -1,6 +1,7 @@
 import { Provide } from '@midwayjs/core';
 import { IUserOptions } from '../interface';
 import { User } from '../entity/user';
+import type { CreationAttributes } from 'sequelize';
 /**
  * userId                  用户ID
  * userHh                  户号
@@ -42,18 +43,18 @@ export class UserService {
 
   async updateUserByUserHh(
     userHh: string,
-    rest: any
+    rest: Partial<IUserOptions>
   ): Promise<[affectedCount: number]> {
     return await User.update(rest, { where: { userHh } });
   }
 
-  async createUser(userHh: string, rest: any): Promise<User> {
+  async createUser(userHh: string, rest: Partial<IUserOptions>): Promise<User> {
     return await User.create({ userHh, ...rest });
   }
 
   async saveUserNewInfoToDB(
     userHh: string,
-    rest: any
+    rest: Partial<IUserOptions>
   ): Promise<[affectedCount: number]> {
     return await User.update(rest, { where: { userHh } });
   }
@@ -113,6 +114,8 @@ export class UserService {
         ]),
       },
     ];
-    return await User.bulkCreate(userList as any);
+    return await User.bulkCreate(
+      userList as unknown as CreationAttributes<User>[]
+    );
   }
 }

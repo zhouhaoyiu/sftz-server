@@ -1,5 +1,3 @@
-/// <reference path="../typings/koa__cors/index.d.ts" />
-
 import { Configuration, App, ILifeCycle } from '@midwayjs/core';
 import * as koa from '@midwayjs/koa';
 import * as validate from '@midwayjs/validate';
@@ -33,15 +31,14 @@ export class ContainerLifeCycle implements ILifeCycle {
       .map(origin => origin.trim())
       .filter(Boolean);
     // add middleware
-    this.app.useMiddleware([
-      ReportMiddleware,
-      cors({
-        origin: (ctx: any) => {
-          const origin = ctx.get('Origin');
-          return origin && allowedOrigins.includes(origin) ? origin : '';
-        },
-      }),
-    ]);
+    const corsMiddleware = cors({
+      origin: ctx => {
+        const origin = ctx.get('Origin');
+        return origin && allowedOrigins.includes(origin) ? origin : '';
+      },
+    }) as unknown as Parameters<typeof this.app.use>[0];
+    this.app.use(corsMiddleware);
+    this.app.useMiddleware([ReportMiddleware]);
     // add filter
     this.app.useFilter([NotFoundFilter, DefaultErrorFilter]);
   }
