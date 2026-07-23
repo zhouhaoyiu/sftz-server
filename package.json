@@ -54,5 +54,5 @@
   },
   "author": "anonymous",
   "license": "MIT",
-  "packageManager": "pnpm@11.9.0"
+  "packageManager": "pnpm@11.15.1"
 }
