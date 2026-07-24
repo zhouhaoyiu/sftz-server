@@ -24,6 +24,6 @@ jobs:
         node-version: 26.x
         cache: pnpm
 
-    - run: pnpm install --frozen-lockfile
+    - run: pnpm --config.trust-lockfile=true install --frozen-lockfile
     - run: pnpm run lint
     - run: pnpm run build
