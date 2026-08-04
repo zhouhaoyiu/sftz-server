@@ -43,8 +43,8 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1(supports-color@8.1.1)
       '@midwayjs/logger':
-        specifier: ^4.0.1
-        version: 4.0.1
+        specifier: ^4.1.0
+        version: 4.1.0
       '@midwayjs/sequelize':
         specifier: ^4.2.1
         version: 4.2.1
@@ -496,8 +496,8 @@ packages:
   '@midwayjs/locate@1.8.1':
     resolution: {integrity: sha512-ZlYKENlBOtN6ODZk9+iHdJcrV+IYk+CZXqyQMT6VzTmBoE/z/HnAxKq39uJsn+dzDTR+c18/qdYVRZ0feKSHMw==}
 
-  '@midwayjs/logger@4.0.1':
-    resolution: {integrity: sha512-8T+EHVGUhOyNtNZWKWz7we7EFCzGoTp4N0idBl9ggyqODj3A/S+o2xABdRsqq6OAthKzMI8zS9pY+Imgzp0KKQ==}
+  '@midwayjs/logger@4.1.0':
+    resolution: {integrity: sha512-u2Gi3bshKWc7y559ypsAHLHugm4iAUbu/oP6ZVoUANqZXbGPvvSTxg/A9WkwZ2o0VJBaATdEgM3pZ3f3pRho6w==}
     engines: {node: '>=20'}
 
   '@midwayjs/luckyeye@1.1.0':
@@ -3428,7 +3428,7 @@ snapshots:
       fs-extra: 8.1.0
       globby: 10.0.2
 
-  '@midwayjs/logger@4.0.1':
+  '@midwayjs/logger@4.1.0':
     dependencies:
       dayjs: 1.11.21
       safe-stable-stringify: 2.5.0
