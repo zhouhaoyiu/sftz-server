@@ -14,7 +14,7 @@
     "@midwayjs/sequelize": "^4.2.1",
     "@midwayjs/validate": "^4.2.1",
     "mysql": "^2.18.1",
-    "mysql2": "^3.23.4",
+    "mysql2": "^3.24.2",
     "sequelize": "^6.28.1",
     "sequelize-typescript": "^2.1.5"
   },
