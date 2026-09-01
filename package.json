@@ -9,7 +9,7 @@
     "@midwayjs/core": "^4.2.1",
     "@midwayjs/decorator": "^3.0.0",
     "@midwayjs/info": "^4.2.1",
-    "@midwayjs/koa": "^4.2.1",
+    "@midwayjs/koa": "^4.2.2",
     "@midwayjs/logger": "^4.1.0",
     "@midwayjs/sequelize": "^4.2.2",
     "@midwayjs/validate": "^4.2.1",
