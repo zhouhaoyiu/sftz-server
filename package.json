@@ -26,7 +26,7 @@
     "@types/jest": "^30.0.0",
     "@types/koa": "^3.0.3",
     "@types/koa__cors": "^5.0.1",
-    "@types/node": "^26.4.0",
+    "@types/node": "^26.4.1",
     "cross-env": "^10.1.0",
     "jest": "^30.5.0",
     "oxlint": "1.81.0",
