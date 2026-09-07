@@ -28,7 +28,7 @@
     "@types/koa__cors": "^5.0.1",
     "@types/node": "^26.4.1",
     "cross-env": "^10.1.0",
-    "jest": "^30.5.0",
+    "jest": "^30.5.1",
     "oxlint": "1.81.0",
     "typescript": "~7.0.2"
   },
