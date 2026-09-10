@@ -28,8 +28,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       '@midwayjs/bootstrap':
-        specifier: ^4.2.1
-        version: 4.2.1
+        specifier: ^4.2.3
+        version: 4.2.3
       '@midwayjs/core':
         specifier: ^4.2.1
         version: 4.2.1
@@ -443,8 +443,8 @@ packages:
     engines: {node: '>= 12'}
     deprecated: Please upgrade to v15 or higher. All reported bugs in this version are fixed in newer releases, dependencies have been updated, and security has been improved.
 
-  '@midwayjs/bootstrap@4.2.1':
-    resolution: {integrity: sha512-QjBi5XRfh23gJq+jeXoETRHNzZNrzfIFoWdP6uYn1V3lCxclHV4OaUScP2jxw0fsS/9tDV5AMj+Gz+e8uKNvDQ==}
+  '@midwayjs/bootstrap@4.2.3':
+    resolution: {integrity: sha512-V9+YV+yA4/08c4XVCwXSWSo1tmNWUTPYfxjU+OuHyftz4Guxr8L9iNvJF2A851V534O/0hohQQzvCwpWMIpFrA==}
     engines: {node: '>=20'}
 
   '@midwayjs/cli-plugin-build@2.1.0':
@@ -3447,7 +3447,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@midwayjs/bootstrap@4.2.1':
+  '@midwayjs/bootstrap@4.2.3':
     dependencies:
       '@midwayjs/event-bus': 1.11.1
 
