@@ -66,10 +66,10 @@ importers:
     devDependencies:
       '@midwayjs/cli':
         specifier: ^2.0.0
-        version: 2.1.1(@midwayjs/mock@4.2.1(supports-color@8.1.1))(@swc/core@1.16.2)(@types/node@26.4.1)(supports-color@8.1.1)(typescript@7.0.2)
+        version: 2.1.1(@midwayjs/mock@4.2.3(supports-color@8.1.1))(@swc/core@1.16.2)(@types/node@26.4.1)(supports-color@8.1.1)(typescript@7.0.2)
       '@midwayjs/mock':
-        specifier: ^4.2.1
-        version: 4.2.1(supports-color@8.1.1)
+        specifier: ^4.2.3
+        version: 4.2.3(supports-color@8.1.1)
       '@swc/core':
         specifier: ^1.16.2
         version: 1.16.2
@@ -529,8 +529,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     hasBin: true
 
-  '@midwayjs/mock@4.2.1':
-    resolution: {integrity: sha512-dkHEFioxcaT1L4jHCDJewg5UVMsaDv5gHizYQr1tGWNUOY+/2JZmXXM/dTRA+jjRWWj8GQQiV5+H3A0dnOgEZA==}
+  '@midwayjs/mock@4.2.3':
+    resolution: {integrity: sha512-0btAbXUaNgpTCxXLYgpKHpB8OzeOma/6lsng7RbgQq47EHmCf636/EuWqd0NSJMuAo3mOctUw9BLHwO3wgl+IA==}
     engines: {node: '>=20'}
 
   '@midwayjs/sequelize@4.2.3':
@@ -1004,6 +1004,9 @@ packages:
   '@types/koa__cors@5.0.1':
     resolution: {integrity: sha512-xZckuh3B6ycSBAIYnBImG1VDHyBNZsltGAuGb4THuZllccdLgD5DUs4RA7TAUjB58THg00SSZ1e//duQef7WRw==}
 
+  '@types/methods@1.1.4':
+    resolution: {integrity: sha512-ymXWVrDiCxTBE3+RIrrP533E70eA+9qu7zdWoHuOmGujkYtzf4HQF96b8nwHLqhuf4ykX61IGRIB38CC6/sImQ==}
+
   '@types/minimatch@5.1.2':
     resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
 
@@ -1012,6 +1015,9 @@ packages:
 
   '@types/node@26.4.1':
     resolution: {integrity: sha512-k97ENvZWtvA6yqz5/FS6a7duDgOPEeOQOc2iKS/nY6mX6qJUKtLnWzQS+Xj6tXweyj6ZcTAK2Qecetnvi9nCLA==}
+
+  '@types/node@26.5.0':
+    resolution: {integrity: sha512-dVSGpriSoCgz8WnDNTuSSuSv1PC/ALXihO4ulRZt7Md8k9mlbdin3lGOcDE8SnWOgf513ByWlXd7BK4azmyg/A==}
 
   '@types/qs@6.15.0':
     resolution: {integrity: sha512-JawvT8iBVWpzTrz3EGw9BTQFg3BQNmwERdKE22vlTxawwtbyUSlMppvZYKLZzB5zgACXdXxbD3m1bXaMqP/9ow==}
@@ -1033,6 +1039,9 @@ packages:
 
   '@types/superagent@4.1.14':
     resolution: {integrity: sha512-iiXaOL2wSbnSY4qg0mFPWJHL9iwyEsoNYwaHF2w58/fsVAQJlj+KUfFAFZu+nzbz+b7dUprJEAc+O9vhHHhQTA==}
+
+  '@types/superagent@8.1.11':
+    resolution: {integrity: sha512-KA7srSW/HENDtOw9DOqaFLgWuMqN9WgjEw62lh9dpvRaZDkhdOkazASd7X7i2eMUYLHa1U37ZttnePsH5zTDHw==}
 
   '@types/supertest@2.0.16':
     resolution: {integrity: sha512-6c2ogktZ06tr2ENoZivgm7YnprnhYE4ZoXGMY+oA7IuAf17M8FWvujXZGmxLv8y0PTyts4x5A+erSwVUFA8XSg==}
@@ -2852,6 +2861,9 @@ packages:
   undici-types@8.3.0:
     resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
 
+  undici-types@8.9.0:
+    resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
+
   universalify@0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
@@ -3256,7 +3268,7 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 30.5.1
       '@jest/types': 30.5.1
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
       jest-mock: 30.5.1
 
   '@jest/expect-utils@30.4.1':
@@ -3278,7 +3290,7 @@ snapshots:
     dependencies:
       '@jest/types': 30.5.1
       '@sinonjs/fake-timers': 15.4.0
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
       jest-message-util: 30.5.1
       jest-mock: 30.5.1
       jest-util: 30.5.1
@@ -3298,7 +3310,7 @@ snapshots:
 
   '@jest/pattern@30.4.0':
     dependencies:
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
       jest-regex-util: 30.4.0
 
   '@jest/pattern@30.5.0':
@@ -3475,11 +3487,11 @@ snapshots:
       '@midwayjs/serverless-spec-builder': 2.1.0
       fs-extra: 8.1.0
 
-  '@midwayjs/cli-plugin-dev@2.1.1(@midwayjs/mock@4.2.1(supports-color@8.1.1))(supports-color@8.1.1)':
+  '@midwayjs/cli-plugin-dev@2.1.1(@midwayjs/mock@4.2.3(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       '@midwayjs/command-core': 2.1.0
       '@midwayjs/debugger': 1.0.9
-      '@midwayjs/mock': 4.2.1(supports-color@8.1.1)
+      '@midwayjs/mock': 4.2.3(supports-color@8.1.1)
       chalk: 4.1.2
       chokidar: 3.6.0
       detect-port: 1.6.1(supports-color@8.1.1)
@@ -3509,12 +3521,12 @@ snapshots:
       - '@swc/wasm'
       - '@types/node'
 
-  '@midwayjs/cli@2.1.1(@midwayjs/mock@4.2.1(supports-color@8.1.1))(@swc/core@1.16.2)(@types/node@26.4.1)(supports-color@8.1.1)(typescript@7.0.2)':
+  '@midwayjs/cli@2.1.1(@midwayjs/mock@4.2.3(supports-color@8.1.1))(@swc/core@1.16.2)(@types/node@26.4.1)(supports-color@8.1.1)(typescript@7.0.2)':
     dependencies:
       '@midwayjs/cli-plugin-build': 2.1.0
       '@midwayjs/cli-plugin-check': 2.1.0
       '@midwayjs/cli-plugin-clean': 2.1.0
-      '@midwayjs/cli-plugin-dev': 2.1.1(@midwayjs/mock@4.2.1(supports-color@8.1.1))(supports-color@8.1.1)
+      '@midwayjs/cli-plugin-dev': 2.1.1(@midwayjs/mock@4.2.3(supports-color@8.1.1))(supports-color@8.1.1)
       '@midwayjs/cli-plugin-test': 2.1.0(@swc/core@1.16.2)(@types/node@26.4.1)
       '@midwayjs/command-core': 2.1.0
       enquirer: 2.4.1
@@ -3618,7 +3630,7 @@ snapshots:
       semver: 7.8.5
       supports-color: 8.1.1
 
-  '@midwayjs/mock@4.2.1(supports-color@8.1.1)':
+  '@midwayjs/mock@4.2.3(supports-color@8.1.1)':
     dependencies:
       '@types/superagent': 4.1.14
       '@types/supertest': 2.0.16
@@ -3920,7 +3932,7 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
 
   '@types/connect@3.4.38':
     dependencies:
@@ -3943,7 +3955,7 @@ snapshots:
 
   '@types/express-serve-static-core@5.1.2':
     dependencies:
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
       '@types/qs': 6.15.1
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.1
@@ -3957,7 +3969,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
 
   '@types/http-assert@1.5.6': {}
 
@@ -4001,6 +4013,8 @@ snapshots:
     dependencies:
       '@types/koa': 3.0.3
 
+  '@types/methods@1.1.4': {}
+
   '@types/minimatch@5.1.2': {}
 
   '@types/ms@2.1.0': {}
@@ -4008,6 +4022,10 @@ snapshots:
   '@types/node@26.4.1':
     dependencies:
       undici-types: 8.3.0
+
+  '@types/node@26.5.0':
+    dependencies:
+      undici-types: 8.9.0
 
   '@types/qs@6.15.0': {}
 
@@ -4017,23 +4035,30 @@ snapshots:
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
 
   '@types/serve-static@2.2.0':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
 
   '@types/stack-utils@2.0.3': {}
 
   '@types/superagent@4.1.14':
     dependencies:
       '@types/cookiejar': 2.1.5
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
+
+  '@types/superagent@8.1.11':
+    dependencies:
+      '@types/cookiejar': 2.1.5
+      '@types/methods': 1.1.4
+      '@types/node': 26.5.0
+      form-data: 4.0.6
 
   '@types/supertest@2.0.16':
     dependencies:
-      '@types/superagent': 4.1.14
+      '@types/superagent': 8.1.11
 
   '@types/validator@13.15.10': {}
 
@@ -4898,7 +4923,7 @@ snapshots:
       '@jest/expect': 30.5.1(supports-color@8.1.1)
       '@jest/test-result': 30.5.1
       '@jest/types': 30.5.1
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
       chalk: 4.1.2
       co: 4.6.0
       dedent: 1.7.2
@@ -5000,7 +5025,7 @@ snapshots:
       '@jest/environment': 30.5.1
       '@jest/fake-timers': 30.5.1
       '@jest/types': 30.5.1
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
       jest-mock: 30.5.1
       jest-util: 30.5.1
       jest-validate: 30.5.1
@@ -5074,7 +5099,7 @@ snapshots:
     dependencies:
       '@jest/expect-utils': 30.5.1
       '@jest/types': 30.5.1
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
       jest-util: 30.5.1
 
   jest-regex-util@30.4.0: {}
@@ -5219,7 +5244,7 @@ snapshots:
 
   jest-worker@30.5.1:
     dependencies:
-      '@types/node': 26.4.1
+      '@types/node': 26.5.0
       '@ungap/structured-clone': 1.4.0
       jest-util: 30.5.1
       merge-stream: 2.0.0
@@ -5957,6 +5982,8 @@ snapshots:
       '@typescript/typescript-win32-x64': 7.0.2
 
   undici-types@8.3.0: {}
+
+  undici-types@8.9.0: {}
 
   universalify@0.1.2: {}
 
