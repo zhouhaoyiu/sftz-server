@@ -46,8 +46,8 @@ importers:
         specifier: ^4.1.0
         version: 4.1.0
       '@midwayjs/sequelize':
-        specifier: ^4.2.2
-        version: 4.2.2
+        specifier: ^4.2.3
+        version: 4.2.3
       '@midwayjs/validate':
         specifier: ^4.2.2
         version: 4.2.2
@@ -533,8 +533,8 @@ packages:
     resolution: {integrity: sha512-dkHEFioxcaT1L4jHCDJewg5UVMsaDv5gHizYQr1tGWNUOY+/2JZmXXM/dTRA+jjRWWj8GQQiV5+H3A0dnOgEZA==}
     engines: {node: '>=20'}
 
-  '@midwayjs/sequelize@4.2.2':
-    resolution: {integrity: sha512-RLZB0zBNmELeNRyi/RaK/cmn1OHEtnE62ab/8KdHbRC5zOW+1lsDALambdaDIgeAJqed/78QL7FVlN7ttVUSYA==}
+  '@midwayjs/sequelize@4.2.3':
+    resolution: {integrity: sha512-2a3MEHvyjtcQpAsaPx1kTS0VC4lG5uYLpu2K0ns2376m3j5bGGWW0RbGdtGh7cdSin4pkmRKCVKsNMbyRyH8tg==}
     engines: {node: '>=20'}
 
   '@midwayjs/serverless-spec-builder@2.1.0':
@@ -3628,7 +3628,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@midwayjs/sequelize@4.2.2': {}
+  '@midwayjs/sequelize@4.2.3': {}
 
   '@midwayjs/serverless-spec-builder@2.1.0':
     dependencies:
