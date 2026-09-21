@@ -29,7 +29,7 @@
     "@types/node": "^26.6.1",
     "cross-env": "^10.1.0",
     "jest": "^30.5.1",
-    "oxlint": "1.81.0",
+    "oxlint": "1.83.0",
     "typescript": "~7.0.2"
   },
   "engines": {
