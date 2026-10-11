@@ -3,11 +3,11 @@ import { Context } from '@midwayjs/koa';
 
 @Catch()
 export class DefaultErrorFilter {
-  async catch(err: Error, _ctx: Context) {
-    // 所有的未分类错误会到这里
+  async catch(err: Error, ctx: Context) {
+    ctx.status = err instanceof TypeError ? 400 : 500;
     return {
       success: false,
-      message: err.message,
+      message: err instanceof TypeError ? '请求参数错误' : '服务暂时不可用',
     };
   }
 }

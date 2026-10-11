@@ -1,3 +1,1 @@
-module.exports = {
-  ...require('mwts/.prettierrc.json')
-}
+module.exports = { singleQuote: true, trailingComma: 'es5' };

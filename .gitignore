@@ -1,4 +1,7 @@
 logs/
+.env
+.env.local
+accounts.json
 npm-debug.log
 yarn-error.log
 node_modules/

@@ -1,9 +1,12 @@
 import { User } from './../entity/user';
+import { Bill } from '../entity/bill';
+import { CustomerChange } from '../entity/customer-change';
+import { randomBytes } from 'node:crypto';
 import { MidwayConfig } from '@midwayjs/core';
 
 export default {
   // use for cookie sign key, should change to your own and keep security
-  keys: process.env.APP_KEYS || 'dev_cookie_key_change_me',
+  keys: process.env.APP_KEYS || randomBytes(32).toString('hex'),
   koa: {
     port: 7001,
   },
@@ -16,12 +19,12 @@ export default {
         database: process.env.DB_NAME || 'sftz',
         password: process.env.DB_PASSWORD || '',
         username: process.env.DB_USERNAME || 'root',
-        entities: [User],
+        entities: [User, Bill, CustomerChange],
         define: {
           timestamps: false,
         },
         sync: process.env.DB_SYNC === 'true',
-        models: [User],
+        models: [User, Bill, CustomerChange],
       },
     },
     validateOnly: true,

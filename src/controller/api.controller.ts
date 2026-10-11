@@ -1,114 +1,78 @@
 import { Inject, Controller, Get, Query, Post } from '@midwayjs/core';
 import { Context } from '@midwayjs/koa';
-import { UserService } from '../service/user.service';
+import { UserService, CustomerConflict } from '../service/user.service';
 import { resultType } from '../type';
-import { IUserOptions } from '../interface';
-
-type UserMutationBody = Partial<IUserOptions> & {
-  editUserHh?: string;
-};
+import { authorize, session } from '../security';
 
 @Controller('/user')
 export class APIController {
-  @Inject()
-  ctx: Context;
-
-  @Inject()
-  userService: UserService;
-
-  private requireAdmin(): resultType | null {
-    const token = process.env.SFTZ_ADMIN_TOKEN;
-    if (!token || this.ctx.get('x-admin-token') !== token) {
-      this.ctx.status = 401;
-      return { success: false, message: 'Unauthorized' };
+  @Inject() ctx: Context;
+  @Inject() userService: UserService;
+  @Get('/get_user') async getUser(
+    @Query('userHh') userHh: string
+  ): Promise<resultType> {
+    const denied = authorize(this.ctx);
+    if (denied) return denied;
+    if (!userHh || userHh.length > 128) {
+      this.ctx.status = 400;
+      return { success: false, message: '户号格式错误' };
     }
-    return null;
+    return {
+      success: true,
+      message: 'OK',
+      data: await this.userService.getUser(userHh),
+    };
   }
-
-  @Get('/get_user')
-  async getUser(@Query('userHh') userHh: string): Promise<resultType> {
-    console.log('userHh', userHh);
-
-    const user = await this.userService.getUser(userHh);
-    return { success: true, message: 'OK', data: user };
-  }
-
-  @Get('/get_all_user')
-  async getAllUser(): Promise<resultType> {
-    const denied = this.requireAdmin();
+  @Get('/get_all_user') async getAllUser(): Promise<resultType> {
+    const denied = authorize(this.ctx, true);
     if (denied) return denied;
-    const user = await this.userService.getAllUser();
-    return { success: true, message: 'OK', data: user };
+    return {
+      success: true,
+      message: 'OK',
+      data: await this.userService.getAllUser(),
+    };
   }
-
-  @Post('/update_user_by_userHh')
-  async updateUserByUserHh(): Promise<resultType> {
-    const denied = this.requireAdmin();
+  @Get('/get_user_count') async getUserCount(): Promise<resultType> {
+    const denied = authorize(this.ctx, true);
     if (denied) return denied;
-    const { editUserHh = '', ...rest } = this.ctx.request
-      .body as UserMutationBody;
-    console.log('userHh', editUserHh);
-    const user = await this.userService.updateUserByUserHh(editUserHh, rest);
-    return { success: true, message: 'OK', data: user };
+    return {
+      success: true,
+      message: 'OK',
+      data: await this.userService.getUserCount(),
+    };
   }
-
-  @Post('/save_user_new_info_to_DB')
-  async saveUserNewInfoToDB(): Promise<resultType> {
-    const denied = this.requireAdmin();
+  private async mutate(
+    action: 'createUser' | 'updateUser' | 'archive'
+  ): Promise<resultType> {
+    const denied = authorize(this.ctx, true);
     if (denied) return denied;
-    const { editUserHh = '', ...rest } = this.ctx.request
-      .body as UserMutationBody;
-    console.log('userHh', editUserHh);
-    const user = await this.userService.saveUserNewInfoToDB(editUserHh, rest);
-    return { success: true, message: 'OK', data: user };
+    try {
+      return {
+        success: true,
+        message: 'OK',
+        data: await this.userService[action](
+          this.ctx.request.body,
+          session(this.ctx)!.id
+        ),
+      };
+    } catch (error) {
+      if (error instanceof CustomerConflict || error instanceof TypeError) {
+        this.ctx.status = error instanceof CustomerConflict ? 409 : 400;
+        return { success: false, message: error.message };
+      }
+      throw error;
+    }
   }
-
-  @Post('/create_user')
-  async createUser(): Promise<resultType> {
-    const denied = this.requireAdmin();
-    if (denied) return denied;
-    const { userHh = '', ...rest } = this.ctx.request.body as UserMutationBody;
-
-    const user = await this.userService.createUser(userHh, rest);
-    return { success: true, message: 'OK', data: user };
+  @Post('/create_user') createUser() {
+    return this.mutate('createUser');
   }
-
-  @Post('/delete_user_by_userHh')
-  async deleteUserByUserHh(): Promise<resultType> {
-    const denied = this.requireAdmin();
-    if (denied) return denied;
-    const { userHh = '' } = this.ctx.request.body as UserMutationBody;
-    const user = await this.userService.deleteUserByUserHh(userHh);
-    return { success: true, message: 'OK', data: user };
+  @Post('/update_user_by_userHh') updateUserByUserHh() {
+    return this.mutate('updateUser');
   }
-
-  @Post('update_waterClassification_by_userHh')
-  async updateWaterClassificationByUserHh(): Promise<resultType> {
-    const denied = this.requireAdmin();
-    if (denied) return denied;
-    const { userHh = '', waterClassification = '' } = this.ctx.request
-      .body as UserMutationBody;
-    const user = await this.userService.updateWaterClassificationByUserHh(
-      userHh,
-      waterClassification
-    );
-    return { success: true, message: 'OK', data: user };
+  @Post('/save_user_new_info_to_DB') saveUserNewInfoToDB() {
+    return this.mutate('updateUser');
   }
-
-  @Get('/get_user_count')
-  async getUserCount(): Promise<resultType> {
-    const user = await this.userService.getUserCount();
-    return { success: true, message: 'OK', data: user };
-  }
-
-  @Get('/mock_create_user')
-  async mockCreateUser(): Promise<resultType> {
-    await this.userService.mockCreateUser();
-    return { success: true, message: 'OK' };
-  }
-  @Get('/mock_get_user')
-  async mockGetUser(): Promise<resultType> {
-    const user = await this.userService.mockGetUser();
-    return { success: true, message: 'OK', data: user };
+  @Post('/delete_user_by_userHh') deleteUserByUserHh() {
+    return this.mutate('archive');
   }
 }
