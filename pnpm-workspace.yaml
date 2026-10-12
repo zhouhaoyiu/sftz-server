@@ -1,21 +1,24 @@
 overrides:
   '@types/koa': 3.0.3
   '@types/minimatch': 5.1.2
-  brace-expansion: 5.0.9
-  joi: 17.13.4
-  js-yaml: 4.3.1
+  brace-expansion: 5.0.12
+  shell-quote: 1.11.0
+  joi: 17.13.8
+  js-yaml: 4.3.2
+  moment: 2.31.0
+  browserslist: 4.28.7
+  baseline-browser-mapping: 2.11.0
   picomatch: 2.3.2
-  qs: 6.15.2
+  qs: 6.16.0
   tmp: 0.2.7
   uuid: 11.1.1
 
 allowBuilds:
-  '@midwayjs/cli': true
+  '@midwayjs/cli': set this to true or false
   '@parcel/watcher': true
   '@swc/core': true
   unrs-resolver: true
 
 patchedDependencies:
   minimatch@3.1.5: patches/minimatch@3.1.5.patch
-  minimatch@5.1.9: patches/minimatch@5.1.9.patch
   minimatch@9.0.9: patches/minimatch@9.0.9.patch
