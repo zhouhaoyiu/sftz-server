@@ -40,8 +40,8 @@ importers:
         specifier: ^3.0.0
         version: 3.20.24
       '@midwayjs/info':
-        specifier: ^4.2.4
-        version: 4.2.4
+        specifier: ^4.2.5
+        version: 4.2.5
       '@midwayjs/koa':
         specifier: ^4.2.3
         version: 4.2.3(supports-color@10.2.2)
@@ -477,8 +477,8 @@ packages:
     resolution: {integrity: sha512-fLKGBGtBh+zEA0hZTy4Am9RoyyDAggRftt2E4MXG6rDCtivYSUvN4ahffHNJUiByGEhkpC4eNlD87lZBbg5dgQ==}
     engines: {node: '>=20'}
 
-  '@midwayjs/info@4.2.4':
-    resolution: {integrity: sha512-1BPs/FdfcUrOuQEtRg5X5R9klYd/0sRD/1SoBfsXHJT9cKuKQ0yxvMp8Z+UmHeucnq7SM06f81sneQLSEp7OsA==}
+  '@midwayjs/info@4.2.5':
+    resolution: {integrity: sha512-or9q8Tg9bIXHFLZGfgelktQ25ZKg6m+k0v1dm02ebV4IQkNP5efezkNamQ3CIS7/E5Q8Lu2PHVE5IBWjXyCg8w==}
     engines: {node: '>=20'}
 
   '@midwayjs/koa@4.2.3':
@@ -3190,7 +3190,7 @@ snapshots:
     dependencies:
       picomatch: 2.3.2
 
-  '@midwayjs/info@4.2.4':
+  '@midwayjs/info@4.2.5':
     dependencies:
       picomatch: 2.3.2
 
