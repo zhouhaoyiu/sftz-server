@@ -29,7 +29,7 @@
     "concurrently": "10.0.6",
     "cross-env": "^10.1.0",
     "jest": "^30.5.2",
-    "oxlint": "1.87.0",
+    "oxlint": "1.88.0",
     "typescript": "~7.0.2"
   },
   "engines": {
