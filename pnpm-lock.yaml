@@ -43,8 +43,8 @@ importers:
         specifier: ^4.2.5
         version: 4.2.5
       '@midwayjs/koa':
-        specifier: ^4.2.5
-        version: 4.2.5(supports-color@10.2.2)
+        specifier: ^4.2.6
+        version: 4.2.6(supports-color@10.2.2)
       '@midwayjs/logger':
         specifier: ^4.1.0
         version: 4.1.0
@@ -457,8 +457,8 @@ packages:
     resolution: {integrity: sha512-or9q8Tg9bIXHFLZGfgelktQ25ZKg6m+k0v1dm02ebV4IQkNP5efezkNamQ3CIS7/E5Q8Lu2PHVE5IBWjXyCg8w==}
     engines: {node: '>=20'}
 
-  '@midwayjs/koa@4.2.5':
-    resolution: {integrity: sha512-yv0owWetFHbuF4r7VYmcLVj8xuIMl08roRKnVSpWRoka5VlS1rQDIgP5A1LPPBAEpVFcohMQNp93it+SBH6P8w==}
+  '@midwayjs/koa@4.2.6':
+    resolution: {integrity: sha512-My4tS2fWiJCE9myRfVF/Lls2evrhCpw9EHFw1KMu713UZnQsxxmXD8MznS8C2C6RcjxwWvIDCpcgrifGLiNZUA==}
     engines: {node: '>=20'}
 
   '@midwayjs/logger@4.1.0':
@@ -473,8 +473,8 @@ packages:
     resolution: {integrity: sha512-koXab0SsiWr5V8WT4ZsgqAs10JhHvmnLpkCltTaGoO4cMwCNansir2gvNdFah5jII4e3QGOuX9qe0vpiGVlK5Q==}
     engines: {node: '>=20'}
 
-  '@midwayjs/session@4.2.5':
-    resolution: {integrity: sha512-1u3L5RjYrfXpYwZDnyRGqkj+lSaLZf9tiqTz1djGB8aqYMf/DkZ1xtMa+aGB1cGqkcbOC8jbRdtpd8yVelz3Rw==}
+  '@midwayjs/session@4.2.6':
+    resolution: {integrity: sha512-ab1nQgDLab1CYOXYMEgBG99lUxNTRML59jrPihbjpiXzVa3wVY2BJv+/GXqJrtAFJpQ+L9+1H5mFG+8M5yenBQ==}
     engines: {node: '>=20'}
 
   '@midwayjs/validate@4.2.5':
@@ -3108,11 +3108,11 @@ snapshots:
     dependencies:
       picomatch: 2.3.2
 
-  '@midwayjs/koa@4.2.5(supports-color@10.2.2)':
+  '@midwayjs/koa@4.2.6(supports-color@10.2.2)':
     dependencies:
       '@koa/router': 12.0.2(supports-color@10.2.2)
       '@midwayjs/cookies': 1.3.0
-      '@midwayjs/session': 4.2.5
+      '@midwayjs/session': 4.2.6
       '@types/koa': 3.0.3
       '@types/qs': 6.15.1
       koa: 3.1.2
@@ -3138,7 +3138,7 @@ snapshots:
 
   '@midwayjs/sequelize@4.2.5': {}
 
-  '@midwayjs/session@4.2.5':
+  '@midwayjs/session@4.2.6':
     dependencies:
       '@midwayjs/cookies': 1.3.0
 
