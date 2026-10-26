@@ -68,8 +68,8 @@ importers:
         version: 2.1.6(@types/node@26.6.5)(@types/validator@13.15.10)(reflect-metadata@0.2.2)(sequelize@6.37.8(mysql2@3.24.6(@types/node@26.6.5))(supports-color@10.2.2))
     devDependencies:
       '@midwayjs/mock':
-        specifier: ^4.2.5
-        version: 4.2.5(supports-color@10.2.2)
+        specifier: ^4.2.6
+        version: 4.2.6(supports-color@10.2.2)
       '@swc/core':
         specifier: ^1.16.18
         version: 1.16.18
@@ -465,8 +465,8 @@ packages:
     resolution: {integrity: sha512-u2Gi3bshKWc7y559ypsAHLHugm4iAUbu/oP6ZVoUANqZXbGPvvSTxg/A9WkwZ2o0VJBaATdEgM3pZ3f3pRho6w==}
     engines: {node: '>=20'}
 
-  '@midwayjs/mock@4.2.5':
-    resolution: {integrity: sha512-JF43bl8REHhgejs5eY1Hp3cLMVQTTHqrvicYmTvVvKJM88JMId5BsQeT5EKbcA49hcjSf4/rREuNZOxq7QMccw==}
+  '@midwayjs/mock@4.2.6':
+    resolution: {integrity: sha512-XdGvT2meIzhczsFc9zVLdCkCEl8AEtzhaatFmntBAyLecuTBvPX2vQdCrsHLrxduieWUFsIZx4OQC6ykYmwzTA==}
     engines: {node: '>=20'}
 
   '@midwayjs/sequelize@4.2.6':
@@ -3126,7 +3126,7 @@ snapshots:
       dayjs: 1.11.23
       safe-stable-stringify: 2.5.0
 
-  '@midwayjs/mock@4.2.5(supports-color@10.2.2)':
+  '@midwayjs/mock@4.2.6(supports-color@10.2.2)':
     dependencies:
       '@types/superagent': 4.1.14
       '@types/supertest': 2.0.16
