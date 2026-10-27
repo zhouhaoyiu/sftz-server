@@ -6,7 +6,7 @@
   "dependencies": {
     "@koa/cors": "^5.0.0",
     "@midwayjs/bootstrap": "^4.2.5",
-    "@midwayjs/core": "^4.2.5",
+    "@midwayjs/core": "^4.2.6",
     "@midwayjs/decorator": "^3.20.24",
     "@midwayjs/info": "^4.2.6",
     "@midwayjs/koa": "^4.2.6",
