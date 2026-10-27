@@ -34,8 +34,8 @@ importers:
         specifier: ^4.2.5
         version: 4.2.5
       '@midwayjs/core':
-        specifier: ^4.2.5
-        version: 4.2.5
+        specifier: ^4.2.6
+        version: 4.2.6
       '@midwayjs/decorator':
         specifier: ^3.20.24
         version: 3.20.24
@@ -434,8 +434,8 @@ packages:
     resolution: {integrity: sha512-30bibsnUoH4gKFNag101lwUd5ztzi0rN4n6jIhBupDrMeoJaRyBfUGg7tygde6VaCntgqtRNvbT4YuzKfh+LBg==}
     engines: {node: '>=12'}
 
-  '@midwayjs/core@4.2.5':
-    resolution: {integrity: sha512-+rRThLSmS9IK4fuFhB8PUnezc9AJnEjWL5PunrZFFkgzePIPnSIJDzNVWJSRmM+jp53m8j/5eQSSOKNJtLT0UQ==}
+  '@midwayjs/core@4.2.6':
+    resolution: {integrity: sha512-R5zIg4yEFLGOb6ta7jGjnIw2rcRJTQM9/4KXU8UMGKasO5vzPGU90KqAcJFryWKxpNK2zN5bwtRpW6gcOLIMEQ==}
     engines: {node: '>=20'}
 
   '@midwayjs/decorator@3.20.24':
@@ -3083,7 +3083,7 @@ snapshots:
       picomatch: 2.3.2
       reflect-metadata: 0.2.2
 
-  '@midwayjs/core@4.2.5':
+  '@midwayjs/core@4.2.6':
     dependencies:
       '@midwayjs/glob': 1.1.1
       '@opentelemetry/api': 1.9.1
