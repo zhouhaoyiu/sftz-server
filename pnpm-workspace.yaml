@@ -3,15 +3,18 @@ overrides:
   '@types/minimatch': 5.1.2
   brace-expansion: 5.0.12
   shell-quote: 1.11.0
-  joi: 17.13.8
+  joi: 17.13.9
   js-yaml: 4.3.2
   moment: 2.31.0
   browserslist: 4.28.7
   baseline-browser-mapping: 2.11.0
   picomatch: 2.3.2
-  qs: 6.16.0
+  qs: 6.16.1
   tmp: 0.2.7
   uuid: 11.1.1
+  deepmerge@>=4.2.0 <=4.3.1: file:vendor/deepmerge
+  glob@>=9.0.0 <=14.0.1: ^14.0.2
+  minimatch@<11.0.1: ^11.0.1
 
 allowBuilds:
   '@midwayjs/cli': set this to true or false
@@ -19,6 +22,8 @@ allowBuilds:
   '@swc/core': true
   unrs-resolver: true
 
-patchedDependencies:
-  minimatch@3.1.5: patches/minimatch@3.1.5.patch
-  minimatch@9.0.9: patches/minimatch@9.0.9.patch
+minimumReleaseAgeExclude:
+  - qs@6.16.1
+  - joi@17.13.9
+  - minimatch@11.0.1
+  - glob@14.0.2
