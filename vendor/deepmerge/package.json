@@ -1,0 +1,9 @@
+{
+  "name": "@local/deepmerge-security-fix",
+  "version": "4.3.1-security.1",
+  "description": "Vendored deepmerge 4.3.1 with the __proto__ filtering fix from upstream PR 286",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "https://github.com/TehShrike/deepmerge",
+  "private": true
+}
