@@ -30,8 +30,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       '@midwayjs/bootstrap':
-        specifier: ^4.2.6
-        version: 4.2.6
+        specifier: ^4.2.7
+        version: 4.2.7
       '@midwayjs/core':
         specifier: ^4.2.7
         version: 4.2.7
@@ -423,8 +423,8 @@ packages:
   '@local/deepmerge-security-fix@file:vendor/deepmerge':
     resolution: {directory: vendor/deepmerge, type: directory}
 
-  '@midwayjs/bootstrap@4.2.6':
-    resolution: {integrity: sha512-gIDmBhovT33vJMTP6LX7AcybSyetKO3tKDXYXbBESH4p0Ookv6zv2O5EGLpyy9yR0k4SzWyA292XcGhLJreerQ==}
+  '@midwayjs/bootstrap@4.2.7':
+    resolution: {integrity: sha512-+z3C+Uc4E3IuhHtzDJVzkVz1iegG9KN23dxOHq6P32KPNXV9DuhbZ9en08hKKlEcJhnNCAzFUB62H6FT+kTflg==}
     engines: {node: '>=20'}
 
   '@midwayjs/cookies@1.3.0':
@@ -3012,7 +3012,7 @@ snapshots:
 
   '@local/deepmerge-security-fix@file:vendor/deepmerge': {}
 
-  '@midwayjs/bootstrap@4.2.6':
+  '@midwayjs/bootstrap@4.2.7':
     dependencies:
       '@midwayjs/event-bus': 1.11.1
 
